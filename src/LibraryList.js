@@ -57,13 +57,13 @@ class LibraryList extends React.Component {
             <h1 className={classes.heading}> MY MIND</h1>
             <Link to='/library/new'>NEW LIBRARY</Link>
           </nav>
-          {libraries.length === 0 && (
+          {libraries && libraries.length === 0 && (
             <h1 className={classes.heading}>
               Start Creating the Library Of Your Mind!
             </h1>
           )}
           <div className={classes.libraries}>
-            {libraries.map((library) => {
+            {libraries?.map((library) => {
               return (
                 <MiniLibrary
                   {...library}
