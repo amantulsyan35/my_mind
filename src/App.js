@@ -74,13 +74,6 @@ class App extends React.Component {
               {...routeProps}
               deleteLibrary={this.deleteLibrary}
             />
-            <Route
-            render={(routeProps) => (
-            <LibraryList
-              libraries={contents}
-              {...routeProps}
-              deleteLibrary={this.deleteLibrary}
-            />
           )}
         />
         <Route
@@ -88,6 +81,15 @@ class App extends React.Component {
           path='/library/:id'
           render={(routeProps) => (
             <Library library={this.findLibrary(routeProps.match.params.id)} />
+          )}
+        />
+        <Route
+          render={(routeProps) => (
+            <LibraryList
+              libraries={contents}
+              {...routeProps}
+              deleteLibrary={this.deleteLibrary}
+            />
           )}
         />
       </Switch>
