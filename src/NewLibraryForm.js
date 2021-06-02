@@ -65,7 +65,7 @@ class NewLibraryForm extends Component {
   handleSave = (newLibrary) => {
     newLibrary.id = newLibrary.libraryName.toLowerCase().replace(/, /g, '-');
     newLibrary.contents = this.state.contents;
-    console.log(newLibrary);
+    // console.log(newLibrary);
     this.props.saveLibrary(newLibrary);
     this.props.history.push('/');
   };

@@ -4,13 +4,14 @@ import { Switch, Route } from 'react-router-dom';
 import Library from './Library';
 import LibraryList from './LibraryList';
 import NewLibraryForm from './NewLibraryForm';
+import seedContent from './seedContent';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     const savedLibraries = JSON.parse(window.localStorage.getItem('libraries'));
     this.state = {
-      contents: savedLibraries,
+      contents: savedLibraries || seedContent,
     };
     this.saveLibrary = this.saveLibrary.bind(this);
     this.findLibrary = this.findLibrary.bind(this);
@@ -26,6 +27,7 @@ class App extends React.Component {
 
   //save library
   saveLibrary = (newLibrary) => {
+    // console.log(newLibrary);
     this.setState(
       { contents: [...this.state.contents, newLibrary] },
       this.syncLocalStorage

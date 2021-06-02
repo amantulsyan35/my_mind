@@ -76,7 +76,7 @@ class ContentMetaForm extends React.Component {
           <DialogTitle id='form-dialog-title'>
             Choose A Library Name
           </DialogTitle>
-          <ValidatorForm onSubmit={this.showEmojiPicker}>
+          <ValidatorForm ref='form' onSubmit={this.showEmojiPicker}>
             <DialogContent>
               <DialogContentText>
                 Please eneter a name for you library. Make sure it's unique
