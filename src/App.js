@@ -74,6 +74,13 @@ class App extends React.Component {
               {...routeProps}
               deleteLibrary={this.deleteLibrary}
             />
+            <Route
+            render={(routeProps) => (
+            <LibraryList
+              libraries={contents}
+              {...routeProps}
+              deleteLibrary={this.deleteLibrary}
+            />
           )}
         />
         <Route
